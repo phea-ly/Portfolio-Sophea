@@ -14,7 +14,10 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">MY PORTFOLIO</div>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experiences</a></li>
@@ -65,6 +68,11 @@
       </div>
       <div class="about-grid">
         <div class="about-text">
+          <div class="about-photo-wrapper">
+            <div class="about-photo-frame">
+              <img class="about-photo" src="image/Profile.png" alt="Sophea Sophorn">
+            </div>
+          </div>
           <p>I'm an aspiring UX/UI Designer based in Phnom Penh, Cambodia, currently pursuing an Associate Degree at Passerelles Numériques Cambodia. I'm passionate about creating digital experiences that are both beautiful and functional.</p>
           <p>With hands-on experience in Figma, wireframing, and prototyping, I bridge the gap between design and development. My frontend skills in HTML, CSS, JavaScript, and Vue.js allow me to bring my designs to life.</p>
           <p>I thrive in collaborative environments and love approaching design challenges with curiosity and a user-first mindset.</p>
@@ -118,55 +126,141 @@
         <div class="section-line"></div>
       </div>
       <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-card-icon">🎨</div>
+        <!-- UI/UX Design -->
+        <div class="skill-card" style="--card-accent: #4e8ef7; --card-glow: rgba(78,142,247,0.15);">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+              <line x1="6" y1="7" x2="10" y2="7"/>
+              <line x1="6" y1="10" x2="14" y2="10"/>
+            </svg>
+          </div>
           <h3>UI/UX Design</h3>
+          <div class="skill-proficiency">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+          </div>
           <div class="skill-tags">
             <span class="skill-tag">Wireframing</span>
             <span class="skill-tag">Prototyping</span>
             <span class="skill-tag">User Flows</span>
+            <span class="skill-tag">User Research</span>
           </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-card-icon">🛠️</div>
+        <!-- Design Tools -->
+        <div class="skill-card" style="--card-accent: #a78bfa; --card-glow: rgba(167,139,250,0.15);">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
           <h3>Design Tools</h3>
+          <div class="skill-proficiency">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+          </div>
           <div class="skill-tags">
             <span class="skill-tag">Figma</span>
             <span class="skill-tag">Canva</span>
+            <span class="skill-tag">Miro</span>
           </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-card-icon">💻</div>
+        <!-- Frontend -->
+        <div class="skill-card" style="--card-accent: #34d399; --card-glow: rgba(52,211,153,0.15);">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
           <h3>Frontend</h3>
+          <div class="skill-proficiency">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+          </div>
           <div class="skill-tags">
             <span class="skill-tag">HTML</span>
             <span class="skill-tag">CSS</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Vue.js</span>
+            <span class="skill-tag">JavaScript (Basic)</span>
+            <span class="skill-tag">Vue.js (Basic)</span>
             <span class="skill-tag">Tailwind</span>
           </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-card-icon">⚙️</div>
+        <!-- Backend -->
+        <div class="skill-card" style="--card-accent: #f59e0b; --card-glow: rgba(245,158,11,0.15);">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 17 10 11 4 5"/>
+              <line x1="12" y1="19" x2="20" y2="19"/>
+            </svg>
+          </div>
           <h3>Backend</h3>
+          <div class="skill-proficiency">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">PHP</span>
             <span class="skill-tag">OOP</span>
             <span class="skill-tag">Laravel</span>
-            <span class="skill-tag">Node.js</span>
           </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-card-icon">🗄️</div>
+        <!-- Database -->
+        <div class="skill-card" style="--card-accent: #f97316; --card-glow: rgba(249,115,22,0.15);">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+          </div>
           <h3>Database</h3>
+          <div class="skill-proficiency">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
           <div class="skill-tags">
             <span class="skill-tag">MySQL</span>
           </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-card-icon">🔧</div>
+        <!-- Dev Tools -->
+        <div class="skill-card" style="--card-accent: #ec4899; --card-glow: rgba(236,72,153,0.15);">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="18" r="3"/>
+              <circle cx="6" cy="6" r="3"/>
+              <circle cx="18" cy="6" r="3"/>
+              <path d="M18 9v1a2 2 0 01-2 2H8a2 2 0 01-2-2V9"/>
+              <path d="M12 12v3"/>
+            </svg>
+          </div>
           <h3>Dev Tools</h3>
+          <div class="skill-proficiency">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+          </div>
           <div class="skill-tags">
             <span class="skill-tag">GitHub</span>
             <span class="skill-tag">Jira</span>
@@ -253,22 +347,154 @@
         <div class="section-line"></div>
       </div>
       <div class="edu-grid">
-        <div class="edu-card">
-          <div class="edu-badge">Current</div>
-          <h3 class="edu-name">Pursuing Associate Degree</h3>
-          <div class="edu-school">Passerelles Numériques Cambodia</div>
-          <div class="edu-year">2025 – 2026</div>
+
+        <!-- PNC — Current -->
+        <div class="edu-card" style="--edu-accent: #4e8ef7; --edu-glow: color-mix(in srgb, #4e8ef7 18%, transparent);">
+          <div class="edu-card-glow"></div>
+          <div class="edu-card-top">
+            <span class="edu-badge-current">In Progress</span>
+            <span class="edu-year-label">2025 — 2026</span>
+          </div>
+          <div class="edu-card-body">
+            <div class="edu-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+              </svg>
+            </div>
+            <h3 class="edu-degree">Associate Degree</h3>
+            <div class="edu-major">Web Development &amp; Digital Technology</div>
+            <div class="edu-school">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Passerelles Numeriques Cambodia
+            </div>
+            <p class="edu-desc">
+              A comprehensive program focused on web development, programming, and digital design. Gaining hands-on experience with HTML, CSS, JavaScript, Vue.js, PHP, Laravel, and MySQL while developing essential skills in UX/UI design, project management, and teamwork.
+            </p>
+          </div>
+          <div class="edu-gallery">
+            <div class="edu-gallery-header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Moments</span>
+            </div>
+            <div class="edu-gallery-grid">
+              <div class="edu-gallery-item">
+                <img src="image/education/img1.png" alt="PNC campus" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+              <div class="edu-gallery-item">
+                <img src="image/education/img2.png" alt="PNC activity" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+              <div class="edu-gallery-item">
+                <img src="image/education/img3.png" alt="PNC event" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+              <div class="edu-gallery-item">
+                <img src="image/education/highschool.png" alt="PNC class photo" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+              <div class="edu-gallery-item">
+                <img src="image/education/highschool2.png" alt="PNC group" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
-        <div class="edu-card">
-          <div class="edu-badge">Completed</div>
-          <h3 class="edu-name">High School Diploma</h3>
-          <div class="edu-school">Banlung City Dormitory High School</div>
-          <div class="edu-year">2022 – 2024</div>
+
+        <!-- High School — Completed -->
+        <div class="edu-card" style="--edu-accent: #f59e0b; --edu-glow: color-mix(in srgb, #f59e0b 18%, transparent);">
+          <div class="edu-card-glow"></div>
+          <div class="edu-card-top">
+            <span class="edu-badge-completed">Completed</span>
+            <span class="edu-year-label">2022 — 2024</span>
+          </div>
+          <div class="edu-card-body">
+            <div class="edu-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <h3 class="edu-degree">High School Diploma</h3>
+            <div class="edu-major">General Education — Science Track</div>
+            <div class="edu-school">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Banlung City Dormitory High School
+            </div>
+            <p class="edu-desc">
+              Completed a rigorous high school curriculum with a strong emphasis on sciences, mathematics, and languages. Developed critical thinking, discipline, and collaborative skills through academic projects, extracurricular activities, and dormitory life.
+            </p>
+          </div>
+          <div class="edu-gallery">
+            <div class="edu-gallery-header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Moments</span>
+            </div>
+            <div class="edu-gallery-grid">
+              <div class="edu-gallery-item">
+                <img src="image/education/highschool.png" alt="High school" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+              <div class="edu-gallery-item">
+                <img src="image/education/highschool2.png" alt="High school graduation" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+              <div class="edu-gallery-item">
+                <img src="image/education/img1.png" alt="School activity" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+              <div class="edu-gallery-item">
+                <img src="image/education/img2.png" alt="Class activity" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+              <div class="edu-gallery-item">
+                <img src="image/education/img3.png" alt="Event" loading="lazy">
+                <div class="edu-gallery-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
-
 
   <!-- CONTACT -->
   <section id="contact">
