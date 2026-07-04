@@ -232,6 +232,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
 
+    function getVisibleItems() {
+      return [...document.querySelectorAll('.edu-gallery-item:not(.edu-add-more)')].filter(
+        (el) => window.getComputedStyle(el).display !== 'none'
+      );
+    }
+
     function resetLightboxImage() {
       img.style.display = '';
       const placeholder = lightbox.querySelector('.lightbox-placeholder');
@@ -245,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openLightbox(index) {
-      const items = document.querySelectorAll('.edu-gallery-item:not(.edu-add-more)');
+      const items = getVisibleItems();
       if (items.length === 0) return;
       currentIndex = Math.max(0, Math.min(index, items.length - 1));
       loadImage(items[currentIndex].querySelector('img')?.src || items[currentIndex].dataset.full, items[currentIndex].querySelector('img')?.alt);
@@ -260,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function prevImage() {
-      const items = document.querySelectorAll('.edu-gallery-item:not(.edu-add-more)');
+      const items = getVisibleItems();
       if (items.length === 0) return;
       currentIndex = (currentIndex - 1 + items.length) % items.length;
       loadImage(items[currentIndex].querySelector('img')?.src || items[currentIndex].dataset.full, items[currentIndex].querySelector('img')?.alt);
@@ -268,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function nextImage() {
-      const items = document.querySelectorAll('.edu-gallery-item:not(.edu-add-more)');
+      const items = getVisibleItems();
       if (items.length === 0) return;
       currentIndex = (currentIndex + 1) % items.length;
       loadImage(items[currentIndex].querySelector('img')?.src || items[currentIndex].dataset.full, items[currentIndex].querySelector('img')?.alt);
@@ -299,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target.closest('.edu-delete-btn')) return;
       const item = e.target.closest('.edu-gallery-item:not(.edu-add-more)');
       if (item) {
-        const items = [...document.querySelectorAll('.edu-gallery-item:not(.edu-add-more)')];
+        const items = getVisibleItems();
         const idx = items.indexOf(item);
         if (idx >= 0) openLightbox(idx);
       }
